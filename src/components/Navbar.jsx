@@ -1,8 +1,9 @@
 // consumes the cart data 
-import { useCart } from '../context/CartContext';
+import { useContext } from 'react';
+import CartContext from '../context/CartContext';
 
 export default function Navbar() {
-  const { cart } = useCart();
+  const { cart } = useContext(CartContext);
 
   return (
     <nav style={{ display: 'flex', justifyContent: 'space-between', background: '#333', color: '#fff', padding: '10px 20px' }}>

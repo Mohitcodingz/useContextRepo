@@ -1,7 +1,7 @@
 // the context is created here and the provider too.
 // This file creates the context, manages the state (adding items), and exports a custom hook (useCart) to make consuming it clean.
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from 'react';
 
 // 1. Create the Context
 const CartContext = createContext();
@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
+    setCart ((prevCart)=>  { return [...prevCart, product]})
     console.log("Added to cart on localhost:", product);
   };
 
@@ -23,4 +23,5 @@ export const CartProvider = ({ children }) => {
 };
 
 // 3. Custom hook for easy consumption
-export const useCart     = () => useContext(CartContext);
+ 
+export default CartContext
