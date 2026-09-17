@@ -1,4 +1,4 @@
-// consumes the cart data
+// consumes the cart data 
 import React from 'react'
 
 export default function Navbar() {
